@@ -58,7 +58,7 @@ window.POSTS = [
   {
     "dateLabel": "23 août",
     "likes": 53,
-    "caption": "",
+    "caption": "FRICHE - 07/2026\n\n@orb.lightdesign",
     "audio": null,
     "items": [
       {
@@ -90,7 +90,7 @@ window.POSTS = [
   {
     "dateLabel": "23 août",
     "likes": 52,
-    "caption": "",
+    "caption": "FRICHE - 07/2026\n\n@orb.lightdesign",
     "audio": null,
     "items": [
       {
@@ -118,7 +118,7 @@ window.POSTS = [
   {
     "dateLabel": "23 août",
     "likes": 51,
-    "caption": "",
+    "caption": "FRICHE - 07/2026\n\n@orb.lightdesign",
     "audio": null,
     "items": [
       {
