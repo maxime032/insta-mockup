@@ -1,53 +1,5 @@
 window.POSTS = [
   {
-    "dateLabel": "22 août",
-    "likes": 18,
-    "caption": "",
-    "audio": "posts_web/31.m4a",
-    "items": [
-      {
-        "src": "posts_web/31A.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31B.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31C.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31D.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31E.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31F.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31G.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31H.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31I.mp4",
-        "type": "video"
-      },
-      {
-        "src": "posts_web/31J.mp4",
-        "type": "video"
-      }
-    ]
-  },
-  {
     "dateLabel": "23 août",
     "likes": 17,
     "caption": "",
