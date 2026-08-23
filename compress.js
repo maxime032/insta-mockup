@@ -15,6 +15,7 @@ const AUDIO_EXT = new Set(['.wav', '.mp3', '.m4a', '.aac', '.ogg']);
 fs.mkdirSync(OUT_DIR, { recursive: true });
 
 const files = fs.readdirSync(SRC_DIR).filter(f => !f.startsWith('.'));
+const expectedOut = new Set();
 
 for (const f of files) {
   const ext = path.extname(f).toLowerCase();
@@ -25,6 +26,7 @@ for (const f of files) {
     const outPath = path.join(OUT_DIR, base + '.jpg');
     execFileSync('ffmpeg', ['-y', '-i', srcPath, '-vf', "scale='min(1080,iw)':-2", '-q:v', '5', outPath], { stdio: 'ignore' });
     console.log(`image  ${f} -> ${path.basename(outPath)}`);
+    expectedOut.add(path.basename(outPath));
   } else if (VIDEO_EXT.has(ext)) {
     const outPath = path.join(OUT_DIR, base + '.mp4');
     execFileSync('ffmpeg', ['-y', '-i', srcPath,
@@ -34,10 +36,21 @@ for (const f of files) {
       '-movflags', '+faststart',
       outPath], { stdio: 'ignore' });
     console.log(`video  ${f} -> ${path.basename(outPath)}`);
+    expectedOut.add(path.basename(outPath));
   } else if (AUDIO_EXT.has(ext)) {
     const outPath = path.join(OUT_DIR, base + '.m4a');
     execFileSync('ffmpeg', ['-y', '-i', srcPath, '-c:a', 'aac', '-b:a', '96k', outPath], { stdio: 'ignore' });
     console.log(`audio  ${f} -> ${path.basename(outPath)}`);
+    expectedOut.add(path.basename(outPath));
+  }
+}
+
+// Supprime les fichiers de posts_web/ qui n'ont plus de source dans posts/
+const existingOut = fs.readdirSync(OUT_DIR).filter(f => !f.startsWith('.'));
+for (const f of existingOut) {
+  if (!expectedOut.has(f)) {
+    fs.unlinkSync(path.join(OUT_DIR, f));
+    console.log(`suppr. ${f} (source absente de posts/)`);
   }
 }
 

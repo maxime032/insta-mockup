@@ -76,14 +76,6 @@ window.POSTS = [
       {
         "src": "posts_web/27D.jpg",
         "type": "image"
-      },
-      {
-        "src": "posts_web/27E.jpg",
-        "type": "image"
-      },
-      {
-        "src": "posts_web/27F.jpg",
-        "type": "image"
       }
     ]
   },
@@ -108,10 +100,6 @@ window.POSTS = [
       {
         "src": "posts_web/26D.jpg",
         "type": "image"
-      },
-      {
-        "src": "posts_web/26E.jpg",
-        "type": "image"
       }
     ]
   },
@@ -135,10 +123,6 @@ window.POSTS = [
       },
       {
         "src": "posts_web/25D.jpg",
-        "type": "image"
-      },
-      {
-        "src": "posts_web/25E.jpg",
         "type": "image"
       }
     ]
