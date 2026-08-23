@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const MOCKUP_DIR = __dirname;
-const POSTS_DIR = path.join(MOCKUP_DIR, 'posts_web');
-const POSTS_URL_DIR = 'posts_web';
+const POSTS_URL_DIR = process.argv[2] === 'local' ? 'posts' : 'posts_web';
+const POSTS_DIR = path.join(MOCKUP_DIR, POSTS_URL_DIR);
 const VIDEO_EXT = new Set(['.mp4', '.mov', '.webm']);
 const MONTHS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
 const NAME_RE = /^(\d{1,3})([A-Za-z]?)\.(jpg|jpeg|png|webp|gif|mp4|mov|webm)$/i;
